@@ -6,6 +6,7 @@ import { InfoPage } from '../info/info';
 import { Platform, ActionSheetController, AlertController  } from 'ionic-angular';
 
 import { UserServiceProvider } from '../../providers/user-service/user-service';
+import { JsonpCallbackContext } from '../../../node_modules/@angular/common/http/src/jsonp';
 
 
 
@@ -31,7 +32,7 @@ export class HomePage {
     this.userService.getUsers()
     .subscribe(
       (data) => { // Success
-        this.users = data['results'];
+        this.users = JSON.parse(JSON.stringify(data));
       },
       (error) =>{
         console.error(error);

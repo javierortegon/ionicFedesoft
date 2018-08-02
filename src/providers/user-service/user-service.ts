@@ -15,7 +15,7 @@ export class UserServiceProvider {
   }
 
   getUsers() {
-    return this.http.get('https://randomuser.me/api/?results=25');
+    return this.http.get('http://192.168.6.129:3000/categories.json');
   }
 
 }

@@ -8,6 +8,9 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
 import { InfoPage } from '../pages/info/info';
+
+import { HttpClientModule } from '@angular/common/http';
+
 import { UserServiceProvider } from '../providers/user-service/user-service';
 
 @NgModule({
@@ -18,6 +21,7 @@ import { UserServiceProvider } from '../providers/user-service/user-service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -29,8 +33,8 @@ import { UserServiceProvider } from '../providers/user-service/user-service';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UserServiceProvider
+    UserServiceProvider,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}
