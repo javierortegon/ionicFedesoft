@@ -13,9 +13,8 @@ export class UserServiceProvider {
   constructor(public http: HttpClient) {
     console.log('Hello UserServiceProvider Provider');
   }
-
   getUsers() {
-    return this.http.get('http://192.168.6.129:3000/categories.json');
+    return this.http.get('https://randomuser.me/api/?results=25');
   }
 
 }
